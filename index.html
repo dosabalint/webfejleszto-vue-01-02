@@ -12,16 +12,25 @@
     <!-- oldalcím -->
     <h1>Kereső</h1>
 
-    <!-- filterek -->
-    <div id="filters">
-        <input type="text" id="nameFilter">
-    </div>
+    <!-- alkalmazás -->
+    <main id="app">
+        <!-- filterek -->
+        <div id="filters">
+            <input type="text" id="nameFilter" v-model="nameFilter">
+        </div>
 
-    <!-- találatok -->
-    <ol id="resultList"></ol>
+        <!-- találatok -->
+        <ol id="resultList">
+            <li v-for='resultItem in GetResults()'>
+                {{ resultItem }}
+            </li>
+        </ol>
+    </main>
 
-    <!-- scripts.js -->
-    <script src="scripts.js"></script>
+    <!-- vendor JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- app JS -->
+    <script defer src="scripts-vue.js"></script>
 
 </body>
 
